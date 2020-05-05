@@ -1,17 +1,18 @@
 const inquirer = require("inquirer");
+//? Sistema especialista
 const nools = require("nools");
 const flow = nools.compile(require.resolve("./classe.nools"));
 const Classe = flow.getDefined("Classe");
 
 function awnser(escolha) {
   const session = flow.getSession(escolha);
-  session.match().then(() => {
-    if (!session.dispose())
-      console.log(
-        "Nenhuma raça compatível com as características selecionadas!"
-      );
-    else session.dispose();
-  });
+  if (session.rootNode.bucket.recency == 0) {
+    console.log("Nenhuma raça compatível com as características selecionadas!");
+  } else {
+    session.match().then(() => {
+      session.dispose();
+    });
+  }
 }
 
 async function questions() {

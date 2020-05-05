@@ -1,25 +1,24 @@
 
 define Classe{
-    constructor: function(altura,racaMistica,
-    ordemOuForca,fisico,aderecos , pelos){
+    constructor: function(altura,racaMistica,ordemOuForca,fisico,aderecos,pelos){
     this.altura = altura;
     this.racaMistica = racaMistica;
     this.ordemOuForca = ordemOuForca;
     this.fisico = fisico;
     this.aderecos = aderecos; 
-    this.pelos = pelos 
+    this.pelos = pelos;
 
     } 
 }  
      
     rule 'Humano' {
         when {
-             v: Classe v.altura >= 1.60 && v.altura < 1.90;
-             t: Classe t.racaMistica == 'Não';
-             r: Classe r.ordemOuForca != 'Ordem' ;
-             e: Classe e.fisico == 'Normal';
-             t: Classe t.aderecos == 'Piercing';
-             e: Classe e.pelos == 'Facial'; 
+             c1: Classe c1.altura >= 1.60 && c1.altura < 1.90;
+             c2: Classe c2.racaMistica == 'Não';
+             c3: Classe c3.ordemOuForca == 'Ordem' ;
+             c4: Classe c4.fisico == 'Normal';
+             c5: Classe c5.aderecos == 'Piercing';
+             c6: Classe c6.pelos == 'Facial'; 
         }
         then{
            console.log("Sua raça é HUMANO!");
@@ -28,12 +27,12 @@ define Classe{
 
     rule 'Anão' {
         when {
-             v: Classe v.altura >= 1.20 && v.altura < 1.60;
-             t: Classe t.racaMistica == 'Não';
-             r: Classe r.ordemOuForca != 'Ordem' ;
-             e: Classe e.fisico == 'Forte';
-             t: Classe t.aderecos == 'Nenhum';
-             e: Classe e.pelos == 'Facial' || e.pelos == 'Corporal'; 
+             c1: Classe c1.altura >= 1.20 && c1.altura < 1.60;
+             c2: Classe c2.racaMistica == 'Não';
+             c3: Classe c3.ordemOuForca == 'Ordem' ;
+             c4: Classe c4.fisico == 'Forte';
+             c5: Classe c5.aderecos == 'Nenhum';
+             c6: Classe c6.pelos == 'Facial' || c6.pelos == 'Corporal'; 
         }
         then{
             console.log("Sua raça é ANÃO!");
@@ -42,12 +41,12 @@ define Classe{
 
     rule 'Elfo Noturno' {
         when {
-             v: Classe v.altura >= 1.90 && v.altura < 2.10;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Ordem' ;
-             e: Classe e.fisico == 'Fraco';
-             t: Classe t.aderecos == 'Tatuagens' || t.aderecos == 'Piercing';
-             e: Classe e.pelos == 'Nenhum'; 
+             c1: Classe c1.altura >= 1.90 && c1.altura < 2.10;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Ordem' ;
+             c4: Classe c4.fisico == 'Fraco';
+             c5: Classe c5.aderecos == 'Tatuagem' || c5.aderecos == 'Piercing';
+             c6: Classe c6.pelos == 'Nenhum'; 
         }
         then{
             console.log("Sua raça é ELFO NOTURNO!");
@@ -56,12 +55,12 @@ define Classe{
 
    rule 'Gnomo' {
         when {
-             v: Classe v.altura >= 1.00 && v.altura < 1.20;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Ordem' ;
-             e: Classe e.fisico == 'Fraco';
-             t: Classe t.aderecos =='Piercing';
-             e: Classe e.pelos == 'Facial'; 
+             c1: Classe c1.altura >= 1.00 && c1.altura < 1.20;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Ordem' ;
+             c4: Classe c4.fisico == 'Fraco';
+             c5: Classe c5.aderecos =='Piercing';
+             c6: Classe c6.pelos == 'Facial'; 
         }
         then{
             console.log("Sua raça é GNOMO!");
@@ -71,12 +70,12 @@ define Classe{
 
     rule 'Draenei' {
         when {
-             v: Classe v.altura >= 2.10 && v.altura < 2.40;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Ordem' ;
-             e: Classe e.fisico == 'Forte';
-             t: Classe t.aderecos =='Chifre';
-             e: Classe e.pelos == 'Nenhum'; 
+             c1: Classe c1.altura >= 2.10 && c1.altura < 2.40;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Ordem' ;
+             c4: Classe c4.fisico == 'Forte';
+             c5: Classe c5.aderecos =='Chifre';
+             c6: Classe c6.pelos == 'Nenhum'; 
         }
         then{
             console.log("Sua raça é DRAENEI!");
@@ -85,12 +84,12 @@ define Classe{
     
    rule 'Worgen' {
         when {
-             v: Classe v.altura >= 1.90 && v.altura < 2.10;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Ordem' ;
-             e: Classe e.fisico == 'Forte';
-             t: Classe t.aderecos =='Nenhum';
-             e: Classe e.pelos == 'Completo'; 
+             c1: Classe c1.altura >= 1.90 && c1.altura < 2.10;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Ordem' ;
+             c4: Classe c4.fisico == 'Forte';
+             c5: Classe c5.aderecos =='Nenhum';
+             c6: Classe c6.pelos == 'Completo'; 
         }
         then{
             console.log("Sua raça é WORGEN!");
@@ -99,12 +98,12 @@ define Classe{
       
    rule 'Pandaren' {
         when {
-             v: Classe v.altura >= 1.60 && v.altura < 1.90;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Ordem' || r.ordemOuForca != 'Força';
-             e: Classe e.fisico == 'Forte';
-             t: Classe t.aderecos =='Nenhum';
-             e: Classe e.pelos == 'Completo'; 
+             c1: Classe c1.altura >= 1.60 && c1.altura < 1.90;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Ordem' || c3.ordemOuForca == 'Força';
+             c4: Classe c4.fisico == 'Forte';
+             c5: Classe c5.aderecos =='Nenhum';
+             c6: Classe c6.pelos == 'Completo'; 
         }
         then{
             console.log("Sua raça é PANDAREN!");
@@ -112,12 +111,12 @@ define Classe{
    }
    rule 'Orc' {
         when {
-             v: Classe v.altura >= 1.90 && v.altura < 2.10;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Força';
-             e: Classe e.fisico == 'Forte';
-             t: Classe t.aderecos =='Tatuagem' || t.aderecos =='Piercing';
-             e: Classe e.pelos == 'Facial' || e.pelos == 'Corporal'; 
+             c1: Classe c1.altura >= 1.90 && c1.altura < 2.10;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Força';
+             c4: Classe c4.fisico == 'Forte';
+             c5: Classe c5.aderecos =='Tatuagem' || c5.aderecos =='Piercing';
+             c6: Classe c6.pelos == 'Facial' || c6.pelos == 'Corporal'; 
         }
         then{
             console.log("Sua raça é ORC!");
@@ -126,12 +125,12 @@ define Classe{
 
     rule 'Morto-Vivo' {
        when {
-             v: Classe v.altura >= 1.60 && v.altura < 1.90;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Força';
-             e: Classe e.fisico == 'Fraco';
-             t: Classe t.aderecos =='Nenhum';
-             e: Classe e.pelos == 'Nenhum'; 
+             c1: Classe c1.altura >= 1.60 && c1.altura < 1.90;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Força';
+             c4: Classe c4.fisico == 'Fraco';
+             c5: Classe c5.aderecos =='Nenhum';
+             c6: Classe c6.pelos == 'Nenhum'; 
         }
         then{
             console.log("Sua raça é MORTO-VIVO!");
@@ -141,12 +140,12 @@ define Classe{
   
     rule 'Tauren' {
        when {
-             v: Classe v.altura >= 2.10 && v.altura < 2.40;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Força';
-             e: Classe e.fisico == 'Forte';
-             t: Classe t.aderecos =='Chifre' || t.aderecos =='Tatuagem' || t.aderecos =='Piercing';
-             e: Classe e.pelos == 'Completo'; 
+             c1: Classe c1.altura >= 2.10 && c1.altura < 2.40;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Força';
+             c4: Classe c4.fisico == 'Forte';
+             c5: Classe c5.aderecos =='Chifre' || c5.aderecos =='Tatuagem' || c5.aderecos =='Piercing';
+             c6: Classe c6.pelos == 'Completo'; 
         }
         then{
             console.log("Sua raça é TAUREN!");
@@ -155,12 +154,12 @@ define Classe{
 
     rule 'Troll' {
        when {
-             v: Classe v.altura >= 1.90 && v.altura < 2.10;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Força';
-             e: Classe e.fisico == 'Normal';
-             t: Classe t.aderecos =='Tatuagem' || t.aderecos =='Piercing';
-             e: Classe e.pelos == 'Facial'; 
+             c1: Classe c1.altura >= 1.90 && c1.altura < 2.10;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Força';
+             c4: Classe c4.fisico == 'Normal';
+             c5: Classe c5.aderecos =='Tatuagem' || c5.aderecos =='Piercing';
+             c6: Classe c6.pelos == 'Facial'; 
         }
         then{
             console.log("Sua raça é TROLL!");
@@ -169,12 +168,12 @@ define Classe{
 
      rule 'Elfo-Sangrento' {
        when {
-             v: Classe v.altura >= 1.90 && v.altura < 2.10;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Força';
-             e: Classe e.fisico == 'Fraco';
-             t: Classe t.aderecos =='Piercing';
-             e: Classe e.pelos == 'Nenhum'; 
+             c1: Classe c1.altura >= 1.90 && c1.altura < 2.10;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Força';
+             c4: Classe c4.fisico == 'Fraco';
+             c5: Classe c5.aderecos =='Piercing';
+             c6: Classe c6.pelos == 'Nenhum'; 
         }
         then{
             console.log("Sua raça é ELFO SANGRENTO!");
@@ -183,12 +182,12 @@ define Classe{
 
    rule 'Goblin' {
        when {
-             v: Classe v.altura >= 1.00 && v.altura < 1.20;
-             t: Classe t.racaMistica == 'Sim';
-             r: Classe r.ordemOuForca != 'Força';
-             e: Classe e.fisico == 'Fraco';
-             t: Classe t.aderecos =='Piercing';
-             e: Classe e.pelos == 'Nenhum'; 
+             c1: Classe c1.altura >= 1.00 && c1.altura < 1.20;
+             c2: Classe c2.racaMistica == 'Sim';
+             c3: Classe c3.ordemOuForca == 'Força';
+             c4: Classe c4.fisico == 'Fraco';
+             c5: Classe c5.aderecos =='Piercing';
+             c6: Classe c6.pelos == 'Nenhum'; 
         }
         then{
             console.log("Sua raça é GOBLIN!");
