@@ -1,0 +1,201 @@
+
+define Classe{
+    constructor: function(altura,racaMistica,
+    ordemOuForca,fisico,aderecos , pelos){
+    this.altura = altura;
+    this.racaMistica = racaMistica;
+    this.ordemOuForca = ordemOuForca;
+    this.fisico = fisico;
+    this.aderecos = aderecos; 
+    this.pelos = pelos 
+
+    } 
+}  
+     
+    rule 'Humano' {
+        when {
+             v: Classe v.altura >= 1.60 && v.altura < 1.90;
+             t: Classe t.racaMistica == 'Não';
+             r: Classe r.ordemOuForca != 'Ordem' ;
+             e: Classe e.fisico == 'Normal';
+             t: Classe t.aderecos == 'Piercing';
+             e: Classe e.pelos == 'Facial'; 
+        }
+        then{
+           console.log("Sua raça é HUMANO!");
+        }
+    }
+
+    rule 'Anão' {
+        when {
+             v: Classe v.altura >= 1.20 && v.altura < 1.60;
+             t: Classe t.racaMistica == 'Não';
+             r: Classe r.ordemOuForca != 'Ordem' ;
+             e: Classe e.fisico == 'Forte';
+             t: Classe t.aderecos == 'Nenhum';
+             e: Classe e.pelos == 'Facial' || e.pelos == 'Corporal'; 
+        }
+        then{
+            console.log("Sua raça é ANÃO!");
+        }
+    }
+
+    rule 'Elfo Noturno' {
+        when {
+             v: Classe v.altura >= 1.90 && v.altura < 2.10;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Ordem' ;
+             e: Classe e.fisico == 'Fraco';
+             t: Classe t.aderecos == 'Tatuagens' || t.aderecos == 'Piercing';
+             e: Classe e.pelos == 'Nenhum'; 
+        }
+        then{
+            console.log("Sua raça é ELFO NOTURNO!");
+        }
+    }
+
+   rule 'Gnomo' {
+        when {
+             v: Classe v.altura >= 1.00 && v.altura < 1.20;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Ordem' ;
+             e: Classe e.fisico == 'Fraco';
+             t: Classe t.aderecos =='Piercing';
+             e: Classe e.pelos == 'Facial'; 
+        }
+        then{
+            console.log("Sua raça é GNOMO!");
+        }
+    }
+
+
+    rule 'Draenei' {
+        when {
+             v: Classe v.altura >= 2.10 && v.altura < 2.40;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Ordem' ;
+             e: Classe e.fisico == 'Forte';
+             t: Classe t.aderecos =='Chifre';
+             e: Classe e.pelos == 'Nenhum'; 
+        }
+        then{
+            console.log("Sua raça é DRAENEI!");
+        }
+    }
+    
+   rule 'Worgen' {
+        when {
+             v: Classe v.altura >= 1.90 && v.altura < 2.10;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Ordem' ;
+             e: Classe e.fisico == 'Forte';
+             t: Classe t.aderecos =='Nenhum';
+             e: Classe e.pelos == 'Completo'; 
+        }
+        then{
+            console.log("Sua raça é WORGEN!");
+        }
+   }
+      
+   rule 'Pandaren' {
+        when {
+             v: Classe v.altura >= 1.60 && v.altura < 1.90;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Ordem' || r.ordemOuForca != 'Força';
+             e: Classe e.fisico == 'Forte';
+             t: Classe t.aderecos =='Nenhum';
+             e: Classe e.pelos == 'Completo'; 
+        }
+        then{
+            console.log("Sua raça é PANDAREN!");
+        }
+   }
+   rule 'Orc' {
+        when {
+             v: Classe v.altura >= 1.90 && v.altura < 2.10;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Força';
+             e: Classe e.fisico == 'Forte';
+             t: Classe t.aderecos =='Tatuagem' || t.aderecos =='Piercing';
+             e: Classe e.pelos == 'Facial' || e.pelos == 'Corporal'; 
+        }
+        then{
+            console.log("Sua raça é ORC!");
+        }
+   }
+
+    rule 'Morto-Vivo' {
+       when {
+             v: Classe v.altura >= 1.60 && v.altura < 1.90;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Força';
+             e: Classe e.fisico == 'Fraco';
+             t: Classe t.aderecos =='Nenhum';
+             e: Classe e.pelos == 'Nenhum'; 
+        }
+        then{
+            console.log("Sua raça é MORTO-VIVO!");
+        }
+    }
+
+  
+    rule 'Tauren' {
+       when {
+             v: Classe v.altura >= 2.10 && v.altura < 2.40;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Força';
+             e: Classe e.fisico == 'Forte';
+             t: Classe t.aderecos =='Chifre' || t.aderecos =='Tatuagem' || t.aderecos =='Piercing';
+             e: Classe e.pelos == 'Completo'; 
+        }
+        then{
+            console.log("Sua raça é TAUREN!");
+        }
+    }
+
+    rule 'Troll' {
+       when {
+             v: Classe v.altura >= 1.90 && v.altura < 2.10;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Força';
+             e: Classe e.fisico == 'Normal';
+             t: Classe t.aderecos =='Tatuagem' || t.aderecos =='Piercing';
+             e: Classe e.pelos == 'Facial'; 
+        }
+        then{
+            console.log("Sua raça é TROLL!");
+        }
+    }
+
+     rule 'Elfo-Sangrento' {
+       when {
+             v: Classe v.altura >= 1.90 && v.altura < 2.10;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Força';
+             e: Classe e.fisico == 'Fraco';
+             t: Classe t.aderecos =='Piercing';
+             e: Classe e.pelos == 'Nenhum'; 
+        }
+        then{
+            console.log("Sua raça é ELFO SANGRENTO!");
+        }
+    }
+
+   rule 'Goblin' {
+       when {
+             v: Classe v.altura >= 1.00 && v.altura < 1.20;
+             t: Classe t.racaMistica == 'Sim';
+             r: Classe r.ordemOuForca != 'Força';
+             e: Classe e.fisico == 'Fraco';
+             t: Classe t.aderecos =='Piercing';
+             e: Classe e.pelos == 'Nenhum'; 
+        }
+        then{
+            console.log("Sua raça é GOBLIN!");
+        }
+    }
+
+   
+
+
+     
