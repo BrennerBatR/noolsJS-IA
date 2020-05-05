@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-//? Sistema especialista
 const nools = require("nools");
 const flow = nools.compile(require.resolve("./classe.nools"));
 const Classe = flow.getDefined("Classe");
